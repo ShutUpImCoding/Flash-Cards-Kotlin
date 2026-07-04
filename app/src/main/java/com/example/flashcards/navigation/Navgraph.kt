@@ -19,13 +19,13 @@ import com.example.flashcards.screens.StudySessionScreen
  * Central navigation graph.
  *
  *
- * HOW TO ADD A NEW SCREEN
+ * ADD A NEW SCREEN
  * ────────────────────────
  * 1. Add a Routes entry in Routes.kt
  * 2. Add a composable { } block below
  * 3. Optionally add to BottomNavItem.kt for a bottom tab
  *
- * HOW TO NAVIGATE (from any screen that receives navController)
+ * NAVIGATE (from any screen that receives navController)
  * ──────────────────────────────────────────────────────────────
  *   // Simple push
  *   navController.navigate(Routes.DeckList.route)

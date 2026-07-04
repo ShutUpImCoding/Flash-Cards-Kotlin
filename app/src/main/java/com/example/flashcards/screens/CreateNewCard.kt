@@ -1,0 +1,68 @@
+package com.example.flashcards.screens
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import com.example.flashcards.ui.theme.ButtonForReturn
+import com.example.flashcards.ui.theme.FlashCardField
+
+
+
+@Composable
+fun AddCardScreen(
+    onCardSaved: () -> Unit,
+    onBack: () -> Unit,
+) {
+    val scrollState = rememberScrollState()
+    var question by remember { mutableStateOf("") }
+    var answer by remember { mutableStateOf("") }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .verticalScroll(scrollState)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Spacer(Modifier.height(24.dp))
+        FlashCardField(
+            title = "Front",
+            value = question,
+            onValueChange = { question = it },
+            placeholder = "Write your question..."
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        FlashCardField(
+            title = "Back",
+            value = answer,
+            onValueChange = { answer = it },
+            placeholder = "Write your answer..."
+        )
+
+        Spacer(Modifier.height(12.dp))
+
+        Button(onClick = onCardSaved) { Text("Save Card") }
+
+        Spacer(Modifier.height(12.dp))
+
+        ButtonForReturn(onClick = onBack, text = "Back")
+
+    }
+}

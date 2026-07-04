@@ -9,11 +9,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.flashcards.ui.theme.ButtonForReturn
 
 // ── Start Session (deck picker)
 
@@ -34,7 +34,9 @@ fun StartSessionScreen(
         // TODO: list of decks to choose from
         Button(onClick = { onDeckSelected("demo-deck-1") }) { Text("Study Demo Deck") }
         Spacer(Modifier.height(12.dp))
-        TextButton(onClick = onBack) { Text("Back") }
+
+        ButtonForReturn(onClick = onBack, text = "Back")
+
     }
 }
 
@@ -55,8 +57,11 @@ fun StudySessionScreen(
         Spacer(Modifier.height(8.dp))
         Text("(Placeholder)", style = MaterialTheme.typography.bodySmall)
         Spacer(Modifier.height(24.dp))
+
         Button(onClick = onFinished) { Text("Finish Session") }
         Spacer(Modifier.height(12.dp))
-        TextButton(onClick = onBack) { Text("Back") }
+
+        ButtonForReturn(onClick = onBack, text = "Back")
+
     }
 }

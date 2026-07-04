@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.flashcards.ui.theme.ButtonForAction
 
 
 @Composable
@@ -15,23 +16,22 @@ fun HomeScreen(
     onStartSession: () -> Unit,
 ) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text("Flashcards", style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(32.dp))
-        Button(modifier = Modifier.fillMaxWidth(), onClick = onAddCard) {
-            Text("Add New Card")
-        }
+
+        ButtonForAction(text = "CREATE NEW", onClick = onAddCard)
         Spacer(Modifier.height(12.dp))
-        Button(modifier = Modifier.fillMaxWidth(), onClick = onMyDecks) {
-            Text("My Decks")
-        }
+        ButtonForAction(text = "My Decks", onClick = onMyDecks)
+
         Spacer(Modifier.height(12.dp))
-        Button(modifier = Modifier.fillMaxWidth(), onClick = onStartSession) {
-            Text("Start Session")
-        }
+        ButtonForAction(text = "Start Session", onClick = onStartSession)
+
     }
 }
 
