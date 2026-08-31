@@ -1,6 +1,7 @@
 package com.example.flashcards.ui.theme
 
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextField
@@ -45,13 +47,31 @@ fun ButtonForReturn(
     }
 }
 
+/* Card looking component for navigating */
 @Composable
 fun NavigationCard(
     onClick: () -> Unit,
     text: String,
 ) {
-    OutlinedButton(modifier = Modifier.fillMaxWidth(), onClick = onClick) {
-        Text(text)
+    OutlinedCard(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp),
+        onClick = onClick,
+        border = BorderStroke(
+            2.dp,
+            MaterialTheme.colorScheme.outline
+        )
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = text,
+                style = MaterialTheme.typography.titleMedium
+            )
+        }
     }
 }
 

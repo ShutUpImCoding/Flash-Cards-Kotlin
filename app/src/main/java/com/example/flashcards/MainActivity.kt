@@ -25,12 +25,6 @@ fun FlashcardApp() {
     val navController = rememberNavController()
 
     Scaffold(
-        // Bottom bar is disabled for now — uncomment to re-enable:
-        // bottomBar = {
-        //     if (shouldShowBottomBar(navController)) {
-        //         FlashcardBottomBar(navController)
-        //     }
-        // },
     ) { innerPadding ->
         // Pass innerPadding into your root layout so content
         // isn't clipped by system bars or a future bottom bar.

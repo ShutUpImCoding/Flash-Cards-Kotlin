@@ -17,8 +17,8 @@ val DarkBackground = Color(0xFF0F0A06)
 val DarkSurface = Color(0xFF1A120D)
 val DarkSurfaceElevated = Color(0xFF241813)
 
-val DarkBorder = Color(0xFF3A2A22)
-val DarkBorderStrong = Color(0xFF5A4032)
+val DarkBorder = Color(0xFF764328)
+val DarkBorderStrong = Color(0xFF9E6435)
 
 // Text
 val TextPrimaryDark = CreamText
